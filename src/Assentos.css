@@ -1,0 +1,51 @@
+.conteudo {
+    margin-left: 15px;
+    margin-bottom: 117px;
+}
+
+.assentos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.assento {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    border: solid 2px gray;
+    background-color:#C3CFD9;
+   
+    
+}
+
+.legenda{
+    display: flex;
+    margin: 30px auto 30px auto;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 320px;
+    width: 100vw;
+   
+
+}
+.legenda div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.verde, .selecionado{
+    background-color: #8DD7CF;
+}
+
+.amarelo, .indisponivel{
+    background-color: #FBE192;
+
+}
+.cinza, .disponivel {
+    background-color:#C3CFD9;
+}
+
+p{
+    text-align: center;
+}

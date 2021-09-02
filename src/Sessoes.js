@@ -15,9 +15,9 @@ export default function Sessoes() {
     const days = sessao.days
     console.log(id)
     useEffect(()=> {
-    const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${id}/showtimes`);
+    const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/movies/${id}/showtimes`);
     promise.then((resp) => {setSessao(resp.data)})
-    promise.catch((resp)=>(console.log(resp.data.message)))
+    promise.catch((resp)=>(alert("Deu K.O")))
     },[])
 
 
