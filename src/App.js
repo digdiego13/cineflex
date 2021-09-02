@@ -3,6 +3,7 @@ import './App.css';
 import Topo from './Topo';
 import Home from './Home';
 import Sessoes from './Sessoes';
+import Assentos from './Assentos';
 
 export default function App () {
 
@@ -16,8 +17,11 @@ export default function App () {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/sessoes/:idSessao" exact>
+        <Route path="/sessoes/:idFilme" exact>
           <Sessoes />
+        </Route>
+        <Route path="/assentos/:idSessao" exact>
+          <Assentos />
         </Route>
       </Switch>
     

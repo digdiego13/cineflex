@@ -46,5 +46,32 @@ body {
 }
 
 .rodape{
+  height: 117px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  background-color: rgba(134, 121, 121, 0.9);
+  padding: 10px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px 5px black;
+}
+.rodape img {
+  height: 89px;
+  width: 64px;
+  border: solid 3px white;
+}
+
+.rodape p {
+  padding-left: 14px;
+}
+.flex{
+  display: flex;
+}
+
+link{
+  text-decoration: none;
 
 }

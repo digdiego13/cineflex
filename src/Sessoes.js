@@ -5,13 +5,14 @@ import Loading from "./Loading";
 import StepComment from "./StepComment";
 import "./sessoes.css";
 import { Link } from "react-router-dom";
+import Rodape from "./Rodape";
 
 export default function Sessoes() {
 
     const params = useParams()
-    const id = params.idSessao
-    const [sessao, setSessao] = useState({});
-   
+    const id = params.idFilme
+    const [sessao, setSessao] = useState([]);
+    const days = sessao.days
     console.log(id)
     useEffect(()=> {
     const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${id}/showtimes`);
@@ -32,16 +33,25 @@ export default function Sessoes() {
         <>
             <StepComment step="Selecione o horario"/>
             {sessao.length !== 0 ? <div className="sessoes">
-                {sessao.days.map((day,index) =>{
+                {days.map((day,index) =>{
                     return(
                         <>
-                    <h2>{day.weekday} - {day.date}</h2>
-                    <div className="horarios">15h</div>
+                    <h2 key={id}>{day.weekday} - {day.date}</h2>
+                    <div className="flex">
+                        {day.showtimes.map((showtime)=> (
+                        <Link to={`/assentos/${showtime.id}`}><div className="horarios" key={showtime.id}>{showtime.name}</div></Link>
+                        
+                    ))}
+                    </div>
+                    
+                    
                     </>
                     )
                     
                 })}
             </div> : ''}
+            <Rodape tituloFilme={sessao.title} imagemFilme={sessao.posterURL} />
+            
             
         </>
     )

@@ -1,5 +1,6 @@
 .sessoes {
     margin-left: 20px;
+    margin-bottom: 117px;
 }
 
 .horarios{
@@ -11,4 +12,5 @@
     align-items: center;
     justify-content: center;
     color: white;
+    border-radius: 4px;
 }
