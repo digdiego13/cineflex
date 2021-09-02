@@ -1,0 +1,14 @@
+.sessoes {
+    margin-left: 20px;
+}
+
+.horarios{
+    height: 43px;
+    width: 83px;
+    margin: 22px 10px 22px 0px;
+    background-color: #E8833A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
