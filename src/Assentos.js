@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Rodape from "./Rodape";
 import './Assentos.css'
 import Assento from './Assento';
+import AssentosLegenda from "./AssentosLegenda";
 
 export default function Assentos () {
 
@@ -15,9 +16,9 @@ export default function Assentos () {
     const id = params.idSessao
     const [assentosEscolhidos, setAssentosEscolhidos] = useState([]) 
     const reservaAssentos = {
-        id: assentosEscolhidos,
+        ids: assentosEscolhidos,
         name: "Vou pegar ainda",
-        cpf:"vou pegar ainda"
+        cpf:"12956329774"
     }
     const [assentos, setAssentos] = useState([]);
     const {movie, seats, day, name: hour} = assentos
@@ -36,7 +37,12 @@ export default function Assentos () {
     }
     console.log(seats)
 
-  
+  function reservarPoltronas(){
+      const promise = axios.post(`
+      https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, reservaAssentos)
+      
+      promise.catch(()=> alert("Algo deu errado"))
+  }
 
     return(
         <>
@@ -45,28 +51,23 @@ export default function Assentos () {
             <div className="assentos">
                 {seats.map((seat, index)=> {
                     return(<Assento assentosEscolhidos={assentosEscolhidos} key={index} id={seat.id} isAvailable={seat.isAvailable} name={seat.name} />)
-                    
                 })}
-              
             </div>
-            <div className="legenda">
-                <div>
-                    <div className="assento verde"></div>
-                    <p>Selecionado</p>
-                </div>
-                <div>
-                    <div className="assento cinza"></div>
-                    <p>Disponivel</p>
-                </div>
-                <div>
-                    <div className="assento amarelo"></div>
-                    <p>Indisponivel</p>
-                </div>
-                
+            <AssentosLegenda />
+            <div className="informacoes">
+                <p>Nome do Comprador</p>
+                <input type="text" placeholder='Coloque o seu nome...'></input>
             </div>
-            
+            <div className="informacoes">
+                <p>CPF do Comprador</p>
+                <input type="number" placeholder='Escreva seu CPF...'></input>
+            </div>
+            <div>
+            <Link to="/sucesso"><button className='botao-laranja' onClick={reservarPoltronas}>Reservar Assento(s)</button></Link>  
+            </div>
+               
         </div>
-
+               
         <Rodape tituloFilme={movie.title} imagemFilme={movie.posterURL} sessaoFilme={day.weekday} sessaoHora={hour} />
         </>
     )

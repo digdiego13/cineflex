@@ -46,7 +46,7 @@ body {
 }
 
 .rodape{
-  height: 117px;
+  height: 100px;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -73,5 +73,16 @@ body {
 
 link{
   text-decoration: none;
+
+}
+
+.botao-laranja{
+  height: 42px;
+  width: 225px;
+  background-color: #E8833A;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin: auto;
 
 }

@@ -1,6 +1,9 @@
 .conteudo {
     margin-left: 15px;
-    margin-bottom: 117px;
+    margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .assentos{
@@ -46,6 +49,15 @@
     background-color:#C3CFD9;
 }
 
-p{
-    text-align: center;
+input{
+    width: 80vw;
+    max-width: 350px;
+    height: 51px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 15px;
+    border-radius: 8px;
+}
+.informacoes{
+    margin: auto;
 }

@@ -4,6 +4,7 @@ import Topo from './Topo';
 import Home from './Home';
 import Sessoes from './Sessoes';
 import Assentos from './Assentos';
+import Sucesso from './Sucesso';
 
 export default function App () {
 
@@ -22,6 +23,9 @@ export default function App () {
         </Route>
         <Route path="/assentos/:idSessao" exact>
           <Assentos />
+        </Route>
+        <Route path="/sucesso" exact>
+          <Sucesso />
         </Route>
       </Switch>
     
