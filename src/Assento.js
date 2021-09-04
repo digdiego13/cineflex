@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function Assento({assentosEscolhidos, isAvailable, id, name, selecionar, alterarAssentos, reservaAssentos}) {
+export default function Assento({assentosEscolhidos, isAvailable, id, name, selecionar}) {
     
     let [classeSelecionado, setClasseSelecionado] = useState('')
     function selecionar() {
@@ -9,11 +9,11 @@ export default function Assento({assentosEscolhidos, isAvailable, id, name, sele
                 element === id ? assentosEscolhidos.splice(assentosEscolhidos.indexOf(element), 1) : console.log('')
             });
             setClasseSelecionado('')
-            alterarAssentos(reservaAssentos)
+            console.log(assentosEscolhidos)
         }else{
             assentosEscolhidos.push(id)
             setClasseSelecionado('selecionado')
-            alterarAssentos(reservaAssentos)
+            console.log(assentosEscolhidos)
         }
        
        

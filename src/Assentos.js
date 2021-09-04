@@ -43,22 +43,22 @@ export default function Assentos ({ alterarAssentos, objetoAssentos}) {
   
   function infoNome(event) {
       reservaAssentos.name = event.target.value
-      alterarAssentos(reservaAssentos)
+      
   }
   function infoCpf(event) {
     reservaAssentos.cpf = event.target.value;
-    alterarAssentos(reservaAssentos)
+    
     }
     
     function reservarPoltronas(){
-
     alterarAssentos(reservaAssentos)
-    if(objetoAssentos.name === '' || objetoAssentos.cpf === '' || objetoAssentos.ids.length === 0){
-        return alert("Faltam informacoes")
-    }
+    console.log(objetoAssentos)
+   
     
     const promise = axios.post(`
-    https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, objetoAssentos)
+    https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many`, {ids: assentosEscolhidos,
+name: reservaAssentos.name,
+cpf: reservaAssentos.cpf})
     
     promise.catch(()=> alert("Algo deu errado"))
     }
