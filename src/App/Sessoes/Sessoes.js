@@ -1,14 +1,14 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "./Loading";
-import StepComment from "./StepComment";
+import Loading from "../../Compartilhado/Loading";
+import StepComment from "../../Compartilhado/StepComment";
 import "./sessoes.css";
 import { Link } from "react-router-dom";
-import Rodape from "./Rodape";
+import Rodape from "../../Compartilhado/Rodape";
 
-export default function Sessoes() {
-
+export default function Sessoes({setPathAtual}) {
+    setPathAtual('/sessoes');
     const params = useParams()
     const id = params.idFilme
     const [sessao, setSessao] = useState([]);

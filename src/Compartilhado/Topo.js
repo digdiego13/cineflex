@@ -1,4 +1,4 @@
-import App from './App.css'
+import App from "../App/App"
 export default function Topo () {
     return(
         <header className='topo'>CINEFLEX</header>

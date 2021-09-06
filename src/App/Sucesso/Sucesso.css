@@ -13,3 +13,14 @@
     font-size: 22px;
     margin-bottom: 5px;
 }
+.botao-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto 0px auto;
+}
+
+.escrita-sucesso{
+    font-weight: bold;
+    color: green;
+}

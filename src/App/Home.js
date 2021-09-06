@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "./Loading";
-import StepComment from "./StepComment";
+import Loading from '../Compartilhado/Loading'
+import StepComment from "../Compartilhado/StepComment";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Home({setPathAtual}) {
+    setPathAtual('/');
     const [filmes, setFilmes] = useState([]);
 
   useEffect(() => {

@@ -2,10 +2,10 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "./Loading";
-import StepComment from "./StepComment";
+import Loading from "../../Compartilhado/Loading";
+import StepComment from "../../Compartilhado/StepComment";
 import { Link } from "react-router-dom";
-import Rodape from "./Rodape";
+import Rodape from "../../Compartilhado/Rodape";
 import './Assentos.css'
 import Assento from './Assento';
 import AssentosLegenda from "./AssentosLegenda";

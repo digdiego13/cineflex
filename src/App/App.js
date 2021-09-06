@@ -1,17 +1,19 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Topo from './Topo';
+import Topo from '../Compartilhado/Topo';
 import Home from './Home';
-import Sessoes from './Sessoes';
-import Assentos from './Assentos';
-import Sucesso from './Sucesso';
+import Sessoes from './Sessoes/Sessoes';
+import Assentos from './Assentos/Assentos';
+import Sucesso from './Sucesso/Sucesso';
+import '../Compartilhado/Voltar'
 import { useState } from 'react';
+import Voltar from '../Compartilhado/Voltar';
 
 
 export default function App () {
 
   
-
+  const [pathAtual, setPathAtual] = useState('/')
   let [objetoAssentos, setObjetosAssentos] = useState({
     ids: [],
     name: "Vou pegar ainda",
@@ -30,24 +32,22 @@ export default function App () {
   
 
 
-  
-
-
   return(
     <BrowserRouter>
       <Topo />
+      <Voltar pathAtual={pathAtual}/>
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Home setPathAtual={setPathAtual}/>
         </Route>
         <Route path="/sessoes/:idFilme" exact>
-          <Sessoes />
+          <Sessoes setPathAtual={setPathAtual}/>
         </Route>
         <Route path="/assentos/:idSessao" exact>
-          <Assentos  alterarAssentos={alterarAssentos} objetoAssentos={objetoAssentos}/>
+          <Assentos alterarAssentos={alterarAssentos} objetoAssentos={objetoAssentos} setPathAtual={setPathAtual}/>
         </Route>
         <Route path="/sucesso/" exact>
-          <Sucesso objetoAssentos={objetoAssentos}/>
+          <Sucesso objetoAssentos={objetoAssentos} setPathAtual={setPathAtual}/>
         </Route>
       </Switch>
     
